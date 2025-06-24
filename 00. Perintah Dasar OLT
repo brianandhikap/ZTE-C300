@@ -1,5 +1,5 @@
 1. Cek Detail Config di Interface ke arah ONT
-OLT-ZTE_C320#show run interface gpon-onu_1/2/5:4
+OLT-ZTE_C300#show run interface gpon-onu_1/2/5:4
 Building configuration...
 !
 interface gpon-onu_1/2/5:4
@@ -12,7 +12,7 @@ interface gpon-onu_1/2/5:4
   service-port 1 vport 1 user-vlan 1247 vlan 1247 svlan 1402
 !
 end
-OLT-ZTE_C320#show run interface gpon-onu_1/2/5:5
+OLT-ZTE_C300#show run interface gpon-onu_1/2/5:5
 Building configuration...
 !
 interface gpon-onu_1/2/5:5
@@ -29,14 +29,14 @@ end
 
 2. Cek Status Interface ONT
 
-OLT-ZTE_C320#show gpon onu state gpon-olt_1/2/5 4     
+OLT-ZTE_C300#show gpon onu state gpon-olt_1/2/5 4     
 OnuIndex               Admin State  OMCC State   O7 State     Phase State
 ----------------------------------------------------------------------------
 gpon-onu_1/2/5:4       enable       disable      unknown      LOS <----- Tanda Link Down       
 ONU Number: 0/1     
 
 
-OLT_ZTE_C320#show gpon onu state gpon-olt_1/2/5 5
+OLT_ZTE_C300#show gpon onu state gpon-olt_1/2/5 5
 OnuIndex               Admin State  OMCC State   O7 State     Phase State
 ----------------------------------------------------------------------------
 gpon-onu_1/2/5:5       enable       enable       operation    working <----- Tanda Link UP   
@@ -44,13 +44,13 @@ ONU Number: 1/1
 
 3. Cek Nilai Optik ONT
 
-OLT-ZTE_C320#show pon power attenuation gpon-onu_1/2/5:4
+OLT-ZTE_C300#show pon power attenuation gpon-onu_1/2/5:4
            OLT                  ONU              Attenuation
 --------------------------------------------------------------------------
  up      Rx :no signal         Tx:N/A               N/A            
  down    Tx :4.200(dbm)        Rx:N/A               N/A            
 
-OLT-ZTE_C320#show pon power attenuation gpon-onu_1/2/5:5
+OLT-ZTE_C300#show pon power attenuation gpon-onu_1/2/5:5
            OLT                  ONU              Attenuation
 --------------------------------------------------------------------------
  up      Rx :-20.850(dbm)      Tx:2.868(dbm)        23.718(dB)     
@@ -58,14 +58,14 @@ OLT-ZTE_C320#show pon power attenuation gpon-onu_1/2/5:5
 
 4. Cek Utilisasi Bandwith Link ONT Real Time
 
-OLT-ZTE_C320#show interface gpon-onu_1/2/5:4
+OLT-ZTE_C300#show interface gpon-onu_1/2/5:4
 ONU statistic:
    Input rate :               1471 Bps               12 pps
    Output rate:               2212 Bps               13 pps
    Input bandwidth throughput :0.0%    
    Output bandwidth throughput: N/A    
 
-OLT-ZTE_C320#show interface gpon-onu_1/2/5:5
+OLT-ZTE_C300#show interface gpon-onu_1/2/5:5
 ONU statistic:
    Input rate :               1411 Bps                9 pps
    Output rate:               1423 Bps                9 pps
@@ -73,7 +73,7 @@ ONU statistic:
    Output bandwidth throughput: N/A    
 
 5. Cek ONT Uptime dan History:
-OLT-ZTE_C320#show gpon onu detail-info gpon-onu_1/2/5:5
+OLT-ZTE_C300#show gpon onu detail-info gpon-onu_1/2/5:5
 ONU interface:         gpon-onu_1/2/5:5
   Name:                Customer-2
   Type:                ZTEG-F660
@@ -111,7 +111,7 @@ ONU interface:         gpon-onu_1/2/5:5
   10   2018-07-29 11:56:31    0000-00-00 00:00:00              
 
 6. Cek Mac Address Perangkat yang terkoneksi ke ONT
-OLT-ZTE_C320#show mac gpon onu gpon-onu_1/2/5:5
+OLT-ZTE_C300#show mac gpon onu gpon-onu_1/2/5:5
 Total mac address : 2
 
 Mac address      Vlan   Type      Port                         Vc
@@ -120,7 +120,7 @@ Mac address      Vlan   Type      Port                         Vc
 6c3b.6b61.d257   1402   Dynamic   gpon-onu_1/2/5:5          vport 1
 
 7. Cek ONT Version
-OLT-ZTE_C320#show gpon remote-onu equip gpon-onu_1/2/5:5
+OLT-ZTE_C300#show gpon remote-onu equip gpon-onu_1/2/5:5
 Vendor ID:           ZTEG 
 Version:             V5.0 
 SN:                  ZTEGc1192dd7 
@@ -141,7 +141,7 @@ TotalGemPortNum:     256
 SysUpTime:           0
 
 8. Cek Status Port di ONT
-OLT-ZTE_C320#show gpon remote-onu interface eth gpon-onu_1/2/5:5
+OLT-ZTE_C300#show gpon remote-onu interface eth gpon-onu_1/2/5:5
 Interface:     eth_0/1
 Speed status:  full-100
 Operate status:enable
@@ -159,18 +159,18 @@ PPPOE-filter:  disable
 Power-control: disable
 
 9. Reboot/Restart ONT
-OLT-ZTE_C320#config t
+OLT-ZTE_C300#config t
 Enter configuration commands, one per line.  End with CTRL/Z.
-OLT-ZTE_C320(config)#pon-onu
-OLT-ZTE_C320(config)#pon-onu-mng gpon-onu_1/2/5:5
-OLT-ZTE_C320(gpon-onu-mng)#reboot
+OLT-ZTE_C300(config)#pon-onu
+OLT-ZTE_C300(config)#pon-onu-mng gpon-onu_1/2/5:5
+OLT-ZTE_C300(gpon-onu-mng)#reboot
 
 10. Shutdown Port 1 di ONT
-OLT-ZTE_C320#config t
+OLT-ZTE_C300#config t
 Enter configuration commands, one per line.  End with CTRL/Z.
-OLT-ZTE_C320(config)#pon-onu
-OLT-ZTE_C320(config)#pon-onu-mng gpon-onu_1/2/5:5
-OLT-ZTE_C320(gpon-onu-mng)#interface eth eth_0/1 state lock
+OLT-ZTE_C300(config)#pon-onu
+OLT-ZTE_C300(config)#pon-onu-mng gpon-onu_1/2/5:5
+OLT-ZTE_C300(gpon-onu-mng)#interface eth eth_0/1 state lock
 
 11. Cek Konfigurasi PON ONU
 JKT-OLT-RO#show onu running config gpon-onu_1/2/11:8
