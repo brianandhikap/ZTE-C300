@@ -1,11 +1,11 @@
-OLT-ZTE_C300#show gpon onu state gpon-olt_1/2/5:4     
+OLT-ZTE_C300#show gpon onu state gpon-olt_1/2/5  
 OnuIndex               Admin State  OMCC State   O7 State     Phase State
 ----------------------------------------------------------------------------
 gpon-onu_1/2/5:4       enable       disable      unknown      LOS <----- Tanda Link Down       
 ONU Number: 0/1     
 
 
-OLT_ZTE_C300#show gpon onu state gpon-olt_1/2/5:5
+OLT_ZTE_C300#show gpon onu state gpon-olt_1/2/5
 OnuIndex               Admin State  OMCC State   O7 State     Phase State
 ----------------------------------------------------------------------------
 gpon-onu_1/2/5:5       enable       enable       operation    working <----- Tanda Link UP   
