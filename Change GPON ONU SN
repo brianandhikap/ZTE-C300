@@ -1,0 +1,5 @@
+OLT-ZTE_C300(config)#inte
+OLT-ZTE_C300(config)#interface gp
+OLT-ZTE_C300(config)#interface gpon-on
+OLT-ZTE_C300(config)#interface gpon-onu_0/10/4:1
+OLT-ZTE_C300(config-if)#registration-method sn  ZTEGXxXxX
